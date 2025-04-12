@@ -79,6 +79,11 @@ Your browser does not support the HTML canvas tag.
 <button onclick="picture()">Picture</button> <!--creates Picture button-->
 <button onclick="remove()">Delete</button> <!--creates Delete button-->
 <script>
+ <div id="output" style="margin-top: 20px;"></div> 
+</div>
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
   function triangle() { //triangle action when button is clicked
     alert("Insert triangle pic here");
   }
