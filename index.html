@@ -78,20 +78,23 @@ Your browser does not support the HTML canvas tag.
 <button onclick="name()">Name</button> <!--creates Name button-->
 <button onclick="picture()">Picture</button> <!--creates Picture button-->
 <button onclick="remove()">Delete</button> <!--creates Delete button-->
-function triangle() { <!--creates what happens when triangle button is pushed-->
-        alert("Insert triangle pic here");
-      }
+<script>
+  function triangle() { //triangle action when button is clicked
+    alert("Insert triangle pic here");
+  }
 
-function name() { <!--creates what happens when Name button is pushed-->
-        alert("Insert shreya here");
-      }
+  function name() { //name action when button is clicked
+    document.getElementById("output").innerText = "Shreya";
+  }
 
-function picture() { <!--creates what happens when Picture button is pushed-->
-        <img src="https://i0.wp.com/southaustincathospital.com/wp-content/uploads/2017/01/kittens-cat-cat-puppy-rush-45170.jpeg?resize=1180%2C435&ssl=1" alt="picture of a group of kittens"> <!--resized picture-->;
-      }
-function remove() { <!--creates what happens when Delete button is pushed-->
-        alert("this will delete something at some point");
-      }
+  function picture() { //picture action when button is clicked
+    document.getElementById("output").innerHTML = 
+      '<img src="https://i0.wp.com/southaustincathospital.com/wp-content/uploads/2017/01/kittens-cat-cat-puppy-rush-45170.jpeg?resize=1180%2C435&ssl=1" width="600">';
+  }
+
+  function remove() { //action when button is clicked
+    document.getElementById("output").innerHTML = "";
+  }
 </body>
 </html>
 		
