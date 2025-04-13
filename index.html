@@ -105,16 +105,17 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
   function name() { //what happens when name is clicked
   ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
-  ctx.font = "48px serif";
-  ctx.fillStyle = "purple";
-  ctx.fillText("Shreya", 600, 200); //trying to make my name show up
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.font = "30px Arial"; //font and size
+  ctx.fillText("Shreya Raja", 100, 50); //trying to make my name show up
   }
 
 function picture() { //new attempt to make the image show up on the canvas and not below it
   const img = new Image(); 
   img.onload = function() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
-    ctx.drawImage(img, 335, 0, 600, 400); 
+  ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
+  ctx.drawImage(img, 335, 0, 600, 400); 
   };
   img.src = "https://i0.wp.com/southaustincathospital.com/wp-content/uploads/2017/01/kittens-cat-cat-puppy-rush-45170.jpeg?resize=1180%2C435&ssl=1"; //the actual image
 }
