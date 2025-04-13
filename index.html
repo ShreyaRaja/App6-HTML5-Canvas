@@ -85,7 +85,7 @@ console.log("This file last modified " + docMod); // generates message in javaSc
   <!-- Buttons -->
   <br>
   <button onclick="rectangle()">Rectangle</button> <!--creates Rectangle button -->
-  <button onclick="name()">Name</button> <!--creates Name button -->
+  <button onclick="myName()">Name</button> <!--creates Name button -->
   <button onclick="picture()">Picture</button> <!--creates Picture button -->
   <button onclick="remove()">Delete</button> <!--creates Delete button -->
 
@@ -103,7 +103,7 @@ console.log("This file last modified " + docMod); // generates message in javaSc
     ctx.fillRect(700, 150, 300, 100); //actual rectangle
   }
 
-function name() {
+function myName() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); //clears
   
   ctx.fillStyle = "lightgray"; //  added a background just to see what parts of this code isnt working
