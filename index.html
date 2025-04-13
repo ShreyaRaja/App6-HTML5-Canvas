@@ -104,9 +104,11 @@ console.log("This file last modified " + docMod); // generates message in javaSc
   }
 
 function name() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.clearRect(0, 0, c.width, c.height);
   ctx.font = "100px Arial";
-  ctx.fillStyle = "purple"; // Makes my name purple!
+  ctx.fillStyle = "purple";
   ctx.fillText("Shreya Raja", 100, 150);
 }
 
