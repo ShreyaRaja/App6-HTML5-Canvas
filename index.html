@@ -101,21 +101,28 @@ console.log("This file last modified " + docMod); // generates message in javaSc
     ctx.clearRect(0, 0, canvas.width, canvas.height); //makes sure we've only got one image at a time
     ctx.fillStyle = "purple"; //makes the triangle purple
     ctx.beginPath();
-    ctx.moveTo(635, 100);
-    ctx.lineTo(535, 300);
-    ctx.lineTo(735, 300);
+    ctx.moveTo(655, 100);
+    ctx.lineTo(545, 300);
+    ctx.lineTo(745, 300);
     ctx.closePath();
     ctx.fill();
   }
 
   function name() { //what happens when name is clicked
-    document.getElementById("output").innerText = "Shreya";
+  ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
+  ctx.font = "48px serif";
+  ctx.fillStyle = "purple";
+  ctx.fillText("Shreya", 600, 200); //trying to make my name show up
   }
 
-  function picture() { //hopefully outputs a pic when clicked
-    document.getElementById("output").innerHTML =
-      '<img src="https://i0.wp.com/southaustincathospital.com/wp-content/uploads/2017/01/kittens-cat-cat-puppy-rush-45170.jpeg?resize=1180%2C435&ssl=1" width="600">';
-  }
+function picture() { //new attempt to make the image show up on the canvas and not below it
+  const img = new Image(); 
+  img.onload = function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
+    ctx.drawImage(img, 335, 0, 600, 400); 
+  };
+  img.src = "https://i0.wp.com/southaustincathospital.com/wp-content/uploads/2017/01/kittens-cat-cat-puppy-rush-45170.jpeg?resize=1180%2C435&ssl=1"; //the actual image
+}
 
   function remove() { //clears canvas
     document.getElementById("output").innerHTML = ""; 
