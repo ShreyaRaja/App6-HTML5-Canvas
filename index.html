@@ -84,7 +84,7 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
   <!-- Buttons -->
   <br>
-  <button onclick="triangle()">Triangle</button> <!--creates Triangle button -->
+  <button onclick="rectangle()">Rectangle</button> <!--creates Rectangle button -->
   <button onclick="name()">Name</button> <!--creates Name button -->
   <button onclick="picture()">Picture</button> <!--creates Picture button -->
   <button onclick="remove()">Delete</button> <!--creates Delete button -->
@@ -97,15 +97,10 @@ console.log("This file last modified " + docMod); // generates message in javaSc
   const canvas = document.getElementById("myCanvas"); //creates a canvas
   const ctx = canvas.getContext("2d"); //makes sure we can actually draw on the canvas
 
-  function triangle() {
+  function rectangle() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); //makes sure we've only got one image at a time
-    ctx.fillStyle = "purple"; //makes the triangle purple
-    ctx.beginPath();
-    ctx.moveTo(655, 100);
-    ctx.lineTo(545, 300);
-    ctx.lineTo(745, 300);
-    ctx.closePath();
-    ctx.fill();
+    ctx.fillStyle = "purple"; //makes the rectangle purple
+    ctx.fillRect(700, 150, 300, 100); //actual rectangle
   }
 
   function name() { //what happens when name is clicked
