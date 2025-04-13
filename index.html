@@ -62,46 +62,66 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 }
 </style>
 
-<body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
-</div>
-	
-<div id="content" class="w3-container">
 <html>
+<head>
+  <title>App6 - HTML5 Canvas</title>
+</head>
+
 <body>
 
-<canvas id="myCanvas" width="1270" height="400" style="border:9px solid #111111;"> <!--creates Canvas-->
-Your browser does not support the HTML canvas tag.
-</canvas>
-<button onclick="triangle()">Triangle</button> <!--creates Triangle button-->
-<button onclick="name()">Name</button> <!--creates Name button-->
-<button onclick="picture()">Picture</button> <!--creates Picture button-->
-<button onclick="remove()">Delete</button> <!--creates Delete button-->
-<script>
- <div id="output" style="margin-top: 20px;"></div> 
+<!-- Header -->
+<div id="header" class="w3-container w3-flat-carrot">
+  <h1>App6 — HTML5 Canvas</h1>
 </div>
+
+<!-- Main Content -->
+<div id="content" class="w3-container">
+
+  <!-- Canvas -->
+  <canvas id="myCanvas" width="1270" height="400" style="border:9px solid #111111;">
+    Your browser does not support the HTML canvas tag.
+  </canvas>
+
+  <!-- Buttons -->
+  <br>
+  <button onclick="triangle()">Triangle</button> <!--creates Triangle button -->
+  <button onclick="name()">Name</button> <!--creates Name button -->
+  <button onclick="picture()">Picture</button> <!--creates Picture button -->
+  <button onclick="remove()">Delete</button> <!--creates Delete button -->
+
+  <div id="output" style="margin-top: 20px;"></div> <!--makes sure there is an output -->
+
+</div>
+
 <script>
-  const canvas = document.getElementById("myCanvas");
-  const ctx = canvas.getContext("2d");
-  function triangle() { //triangle action when button is clicked
-    alert("Insert triangle pic here");
+  const canvas = document.getElementById("myCanvas"); //creates a canvas
+  const ctx = canvas.getContext("2d"); //makes sure we can actually draw on the canvas
+
+  function triangle() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); //makes sure we've only got one image at a time
+    ctx.fillStyle = "purple"; //makes the triangle purple
+    ctx.beginPath();
+    ctx.moveTo(635, 100);
+    ctx.lineTo(535, 300);
+    ctx.lineTo(735, 300);
+    ctx.closePath();
+    ctx.fill();
   }
 
-  function name() { //name action when button is clicked
+  function name() { //what happens when name is clicked
     document.getElementById("output").innerText = "Shreya";
   }
 
-  function picture() { //picture action when button is clicked
-    document.getElementById("output").innerHTML = 
+  function picture() { //hopefully outputs a pic when clicked
+    document.getElementById("output").innerHTML =
       '<img src="https://i0.wp.com/southaustincathospital.com/wp-content/uploads/2017/01/kittens-cat-cat-puppy-rush-45170.jpeg?resize=1180%2C435&ssl=1" width="600">';
   }
 
-  function remove() { //action when button is clicked
-    document.getElementById("output").innerHTML = "";
+  function remove() { //clears canvas
+    document.getElementById("output").innerHTML = ""; 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
-</body>
-</html>
+</script>
 		
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
